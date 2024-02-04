@@ -4,6 +4,7 @@ import { Fragment, useEffect, useState } from "react";
 import { MenuItem } from "@/components/home/MenuItem";
 import { CategoryItem } from "@/components/home/CategoryItem";
 import { SingleItemPopup } from "@/components/home/SingleItemPopup";
+import CartPopup from "@/components/home/CartPopup";
 let priority = []; //add priority categories here by order {name:"cat name"}
 const Home = () => {
   const [restaurantDetails, setRestaurantDetails] = useState(false);
@@ -11,6 +12,7 @@ const Home = () => {
   const [menuItems, setMenuItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const [showSingleItemPopup, setShowSingleItemPopup] = useState(false);
+  const [showCartPopup, setShowCartPopup] = useState(false);
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
@@ -52,6 +54,12 @@ const Home = () => {
   }, []);
   return (
     <div className="min-h-screen flex flex-col">
+      <CartPopup
+        cartItems={cart}
+        setCartItems={setCart}
+        onClose={() => setShowCartPopup(false)}
+        show={showCartPopup}
+      />
       <SingleItemPopup
         name={selectedItem?.name}
         description={selectedItem?.description}
@@ -59,7 +67,16 @@ const Home = () => {
         price={selectedItem?.price}
         show={showSingleItemPopup}
         onAddToCart={() => {
-          setCart([...cart, { ...selectedItem, quantity: 1 }]);
+          // add to cart , if already exists increase the count
+          const item = cart.find((i) => i.name === selectedItem.name);
+          if (item) {
+            item.count++;
+            setCart([...cart]);
+          }
+          if (!item) {
+            setCart([...cart, { ...selectedItem, count: 1 }]);
+          }
+
           setShowSingleItemPopup(false);
           setTimeout(() => {
             setSelectedItem(null);
@@ -77,6 +94,8 @@ const Home = () => {
           logo={restaurantDetails?.meta?.icon}
           title={restaurantDetails?.title?.rendered}
           description={restaurantDetails?.meta?.description}
+          cart={cart}
+          onCart={() => setShowCartPopup(true)}
         />
         <span className="w-full h-[.5px] bg-[#0002] mb-2.5"></span>
         <div className="bg-[hsla(0,0%,100%,.12157)] font-medium text-[13px] px-8 rounded-full py-1 mb-2.5">
