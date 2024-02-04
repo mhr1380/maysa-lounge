@@ -3,11 +3,15 @@ import axios from "axios";
 import { Fragment, useEffect, useState } from "react";
 import { MenuItem } from "@/components/home/MenuItem";
 import { CategoryItem } from "@/components/home/CategoryItem";
+import { SingleItemPopup } from "@/components/home/SingleItemPopup";
 let priority = []; //add priority categories here by order {name:"cat name"}
 const Home = () => {
   const [restaurantDetails, setRestaurantDetails] = useState(false);
   const [categories, setCategories] = useState([]);
   const [menuItems, setMenuItems] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [showSingleItemPopup, setShowSingleItemPopup] = useState(false);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const fetchRestaurantDetails = async () => {
@@ -48,6 +52,26 @@ const Home = () => {
   }, []);
   return (
     <div className="min-h-screen flex flex-col">
+      <SingleItemPopup
+        name={selectedItem?.name}
+        description={selectedItem?.description}
+        image={selectedItem?.image_url}
+        price={selectedItem?.price}
+        show={showSingleItemPopup}
+        onAddToCart={() => {
+          setCart([...cart, { ...selectedItem, quantity: 1 }]);
+          setShowSingleItemPopup(false);
+          setTimeout(() => {
+            setSelectedItem(null);
+          }, 400);
+        }}
+        onCancel={() => {
+          setShowSingleItemPopup(false);
+          setTimeout(() => {
+            setSelectedItem(null);
+          }, 400);
+        }}
+      />
       <div className="w-full flex flex-col items-center bg-[#a29378]">
         <Header
           logo={restaurantDetails?.meta?.icon}
@@ -88,6 +112,10 @@ const Home = () => {
                     image={item.image_url}
                     price={item.price}
                     key={item.name}
+                    onClick={() => {
+                      setSelectedItem(item);
+                      setShowSingleItemPopup(true);
+                    }}
                   />
                 ))}
               </div>

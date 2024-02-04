@@ -1,7 +1,12 @@
 import Image from "next/image";
-export const MenuItem = ({ name, description, image, price }) => {
+export const MenuItem = ({ name, description, image, price, onClick }) => {
   return (
-    <div className="flex bg-[#454545] rounded-lg px-2 py-4 gap-x-2">
+    <div
+      className="flex bg-[#454545] rounded-lg px-2 py-4 gap-x-2"
+      onClick={() => {
+        onClick();
+      }}
+    >
       <div className="w-[120px] h-[136px] overflow-hidden">
         {image ? (
           <Image
