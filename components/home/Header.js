@@ -8,7 +8,7 @@ const Header = ({ logo, title, description, cart, onCart }) => {
       </span>
       {cart.length > 0 ? (
         <div
-          className="absolute left-4 top-4"
+          className="fixed left-4 top-4"
           onClick={() => {
             onCart();
           }}

@@ -37,7 +37,7 @@ export const SingleItemPopup = ({
         />
       </div>
       <div className="bg-[#2d2d2d] rounded-2xl -mt-4">
-        <div className="flex flex-col gap-y-10 w-[90%] mx-auto bg-gradient-to-b opacity-90 from-[#454545] to-[#2d2d2d] p-4 mt-8 rounded-lg">
+        <div className="flex flex-col gap-y-6 w-[90%] mx-auto bg-gradient-to-b opacity-90 from-[#454545] to-[#2d2d2d] p-4 mt-8 rounded-lg">
           <div className="w-full flex flex-col">
             <div className="flex flex-col">
               <div className="text-white text-lg font-bold">{name}</div>

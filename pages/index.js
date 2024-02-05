@@ -5,6 +5,9 @@ import { MenuItem } from "@/components/home/MenuItem";
 import { CategoryItem } from "@/components/home/CategoryItem";
 import { SingleItemPopup } from "@/components/home/SingleItemPopup";
 import CartPopup from "@/components/home/CartPopup";
+import maysa from "@/assets/images/maysa.jpg";
+
+import Image from "next/image";
 let priority = []; //add priority categories here by order {name:"cat name"}
 const Home = () => {
   const [restaurantDetails, setRestaurantDetails] = useState(false);
@@ -19,7 +22,7 @@ const Home = () => {
     const fetchRestaurantDetails = async () => {
       try {
         const response = await axios.get(
-          "http://localhost/wordpress/wp-json/wp/v2/restaurant/168?_fields=menu_items,menu_category,meta,title"
+          "https://fancymenu.ir/wp-json/wp/v2/restaurant/7?_fields=menu_items,menu_category,meta,title"
         );
         // set categires and foods in the categories
         setRestaurantDetails(response.data);
@@ -97,8 +100,10 @@ const Home = () => {
           cart={cart}
           onCart={() => setShowCartPopup(true)}
         />
+      </div>
+      <div className="flex flex-col w-full bg-[#a29378]">
         <span className="w-full h-[.5px] bg-[#0002] mb-2.5"></span>
-        <div className="bg-[hsla(0,0%,100%,.12157)] font-medium text-[13px] px-8 rounded-full py-1 mb-2.5">
+        <div className="bg-[hsla(0,0%,100%,.12157)] font-medium text-[13px] px-8 rounded-full py-1 mb-2.5 w-max mx-auto">
           {" "}
           همه دسته بندی ها در یک نگاه
         </div>
