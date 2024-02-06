@@ -199,9 +199,10 @@ const renderBeforeDataLoaded = () => {
   const greeting = `${getCurrentTime()} زیباتون بخیر. به مایسا خوش اومدید :)`;
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen w-full text-white">
+    <div className="flex flex-col justify-center items-center h-screen w-full text-white -mt-16">
       <Image src={maysa} alt="maysa" className="w-28" />
       <p>{greeting}</p>
+      <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-white mt-3"></div>
     </div>
   );
 };
