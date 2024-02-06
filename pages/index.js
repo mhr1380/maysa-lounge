@@ -5,9 +5,10 @@ import { MenuItem } from "@/components/home/MenuItem";
 import { CategoryItem } from "@/components/home/CategoryItem";
 import { SingleItemPopup } from "@/components/home/SingleItemPopup";
 import CartPopup from "@/components/home/CartPopup";
-import maysa from "@/assets/images/maysa.jpg";
+import maysa from "@/assets/images/maysa-lounge-white.png";
 
 import Image from "next/image";
+import { data } from "autoprefixer";
 let priority = []; //add priority categories here by order {name:"cat name"}
 const Home = () => {
   const [restaurantDetails, setRestaurantDetails] = useState(false);
@@ -17,6 +18,8 @@ const Home = () => {
   const [showSingleItemPopup, setShowSingleItemPopup] = useState(false);
   const [showCartPopup, setShowCartPopup] = useState(false);
   const [cart, setCart] = useState([]);
+
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   useEffect(() => {
     const fetchRestaurantDetails = async () => {
@@ -48,6 +51,9 @@ const Home = () => {
           setCategories(categories);
         }
         setMenuItems(response.data.menu_items);
+        setTimeout(() => {
+          setDataLoaded(true);
+        }, 1000);
       } catch (error) {
         console.error("Error fetching restaurant details:", error);
       }
@@ -56,7 +62,7 @@ const Home = () => {
     fetchRestaurantDetails();
   }, []);
 
-  return (
+  return dataLoaded ? (
     <div className="min-h-screen flex flex-col">
       <CartPopup
         cartItems={cart}
@@ -170,7 +176,33 @@ const Home = () => {
         )}
       </div>
     </div>
+  ) : (
+    <div className="flex flex-col justify-center items-center h-screen w-full">
+      {renderBeforeDataLoaded()}
+    </div>
   );
 };
+const renderBeforeDataLoaded = () => {
+  const getCurrentTime = () => {
+    const currentHour = new Date().getHours();
+    if (currentHour >= 5 && currentHour < 12) {
+      return "صبح";
+    } else if (currentHour >= 12 && currentHour < 17) {
+      return "بعد از ظهر";
+    } else if (currentHour >= 17 && currentHour < 20) {
+      return "عصر";
+    } else {
+      return "شب";
+    }
+  };
 
+  const greeting = `${getCurrentTime()} زیباتون بخیر. به مایسا خوش اومدید :)`;
+
+  return (
+    <div className="flex flex-col justify-center items-center h-screen w-full text-white">
+      <Image src={maysa} alt="maysa" className="w-28" />
+      <p>{greeting}</p>
+    </div>
+  );
+};
 export default Home;
