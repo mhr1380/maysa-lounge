@@ -22,7 +22,7 @@ const Home = () => {
     const fetchRestaurantDetails = async () => {
       try {
         const response = await axios.get(
-          "https://fancymenu.ir/wp-json/wp/v2/restaurant/7?_fields=menu_items,menu_category,meta,title"
+          "https://fancymenu.ir/wp-json/wp/v2/restaurant/10?_fields=menu_items,menu_category,meta,title"
         );
         // set categires and foods in the categories
         setRestaurantDetails(response.data);
