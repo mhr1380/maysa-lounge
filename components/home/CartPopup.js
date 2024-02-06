@@ -27,7 +27,7 @@ const CartPopup = ({ cartItems, setCartItems, onClose, show }) => {
 
   return (
     <div
-      className={`fixed bottom-0 left-0 p-4 pt-12 bg-[#2d2d2d] h-screen shadow-lg w-[80%] text-white z-30 ${
+      className={`fixed bottom-0 left-0 p-4 pt-12 bg-[#2d2d2d] h-screen shadow-lg w-[80%] lg:w-[400px] text-white z-30 ${
         show ? "opacity-100" : "opacity-0 pointer-events-none"
       } transition-opacity duration-300 ease-in-out`}
     >

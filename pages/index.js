@@ -55,6 +55,7 @@ const Home = () => {
 
     fetchRestaurantDetails();
   }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <CartPopup

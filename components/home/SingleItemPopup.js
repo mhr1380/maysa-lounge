@@ -44,10 +44,7 @@ export const SingleItemPopup = ({
               alt={name}
               width={400}
               height={400}
-              onLoadingComplete={() => {
-                console.log("Image loaded");
-                setIsLoading(false);
-              }}
+              onLoad={() => setIsLoading(false)}
             />
           </div>
           <div className="bg-[#2d2d2d] rounded-2xl -mt-4">
