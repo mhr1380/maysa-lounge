@@ -4,7 +4,7 @@ export const MenuItem = ({ name, description, image, price, onClick }) => {
   const [isLoading, setIsLoading] = useState(true);
   return (
     <div
-      className="flex bg-[#454545] rounded-lg px-2 py-4 gap-x-2 cursor-pointer"
+      className="flex bg-[#454545] rounded-lg px-2 py-4 gap-x-2 cursor-pointer max-h-[170px] overflow-hidden"
       onClick={() => {
         onClick();
       }}
@@ -36,14 +36,16 @@ export const MenuItem = ({ name, description, image, price, onClick }) => {
           <h3 className="font-bold text-[14px]"> {name}</h3>
           <p className="font-light text-[13px]">{description}</p>
         </div>
-        <span className="text-white flex gap-x-1 items-center">
-          <span className="text-[20px] font-sans font-bold">{price}</span>
-          <span className="text-[8px]">
-            هـــزار
-            <br></br>
-            <div className="-mt-1">تــومان</div>
+        {price && (
+          <span className="text-white flex gap-x-1 items-center">
+            <span className="text-[20px] font-sans font-bold">{price}</span>
+            <span className="text-[8px]">
+              هـــزار
+              <br></br>
+              <div className="-mt-1">تــومان</div>
+            </span>
           </span>
-        </span>
+        )}
       </div>
     </div>
   );

@@ -8,7 +8,6 @@ import CartPopup from "@/components/home/CartPopup";
 import maysa from "@/assets/images/maysa-lounge-white.png";
 
 import Image from "next/image";
-import { data } from "autoprefixer";
 let priority = []; //add priority categories here by order {name:"cat name"}
 const Home = () => {
   const [restaurantDetails, setRestaurantDetails] = useState(false);
