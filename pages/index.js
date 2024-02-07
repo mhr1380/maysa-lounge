@@ -134,7 +134,7 @@ const Home = () => {
                 >{`« ${cat.name} »`}</span>
                 <span className="w-[22%] h-[2px] bg-gray-400"></span>
               </span>{" "}
-              <div className="grid grid-cols-1 w-[90%] mx-auto gap-y-4 pb-4 h-full lg:grid-cols-2 lg:gap-x-4">
+              <div className="grid grid-cols-1 w-[90%] mx-auto gap-y-4 pb-4 h-max lg:grid-cols-2 lg:gap-x-4">
                 {cat.menuItems.map((item) => (
                   <MenuItem
                     name={item.name}

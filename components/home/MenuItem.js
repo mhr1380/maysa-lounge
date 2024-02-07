@@ -4,7 +4,7 @@ export const MenuItem = ({ name, description, image, price, onClick }) => {
   const [isLoading, setIsLoading] = useState(true);
   return (
     <div
-      className="flex bg-[#454545] rounded-lg px-2 py-4 gap-x-2 cursor-pointer max-h-[170px] overflow-hidden"
+      className="flex bg-[#454545] rounded-lg px-2 py-4 gap-x-2 cursor-pointer h-[170px] max-h-[170px] overflow-hidden"
       onClick={() => {
         onClick();
       }}
