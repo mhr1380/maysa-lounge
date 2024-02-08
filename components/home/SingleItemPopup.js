@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { HiMiniXMark } from "react-icons/hi2";
+import { MdOutlinePostAdd } from "react-icons/md";
 export const SingleItemPopup = ({
   name,
   description,
@@ -30,6 +32,9 @@ export const SingleItemPopup = ({
         show ? "opacity-100" : "opacity-0 pointer-events-none"
       } transition-opacity duration-300 ease-in-out z-30`}
     >
+      <div className="absolute top-2 left-2 bg-[#f3f3f328] rounded-full">
+        <HiMiniXMark className="text-[#a29378] text-4xl" onClick={onCancel} />
+      </div>
       {show && (
         <div className="lg:w-[400px] lg:h-[650px] lg:bg-[#2d2d2d] lg:rounded-2xl lg:overflow-hidden">
           <div className="flex justify-center">
@@ -67,14 +72,15 @@ export const SingleItemPopup = ({
               </div>
               <div className="flex flex-col gap-y-2">
                 <button
-                  className="flex bg-[#a29378] px-4 py-2 rounded-lg font-bold justify-center text-[15px]"
+                  className="flex items-center bg-[#a29378] px-4 py-2 rounded-lg font-bold justify-center text-[15px] text-[#2d2d2d]"
                   onClick={() => {
                     onAddToCart();
                   }}
                 >
                   افزون به یادداشت سفارش
+                  <MdOutlinePostAdd size={23} color="#2d2d2d" />
                 </button>
-                <button
+                {/* <button
                   className="flex bg-[#a29378] px-4 py-2 rounded-lg font-bold justify-center text-[15px]"
                   onClick={() => {
                     setIsLoading(true);
@@ -82,7 +88,7 @@ export const SingleItemPopup = ({
                   }}
                 >
                   بازگشت
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
