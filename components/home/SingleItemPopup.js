@@ -32,8 +32,14 @@ export const SingleItemPopup = ({
         show ? "opacity-100" : "opacity-0 pointer-events-none"
       } transition-opacity duration-300 ease-in-out z-30`}
     >
-      <div className="absolute top-2 left-2 bg-[#f3f3f328] rounded-full">
-        <HiMiniXMark className="text-[#a29378] text-4xl" onClick={onCancel} />
+      <div
+        className="absolute top-2 left-2 bg-[#f3f3f328] rounded-full"
+        onClick={() => {
+          setIsLoading(true);
+          onCancel();
+        }}
+      >
+        <HiMiniXMark className="text-[#a29378] text-4xl" />
       </div>
       {show && (
         <div className="lg:w-[400px] lg:h-[650px] lg:bg-[#2d2d2d] lg:rounded-2xl lg:overflow-hidden">
