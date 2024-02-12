@@ -1,8 +1,8 @@
 import Image from "next/image";
-import cartIcon from "../../assets/icons/cart.png";
+import cartIcon from "../../assets/icons/cart-new.png";
 const Header = ({ logo, title, description, cart, onCart }) => {
   return (
-    <div className="flex max-w-max items-center gap-x-2 bg-[rgba(0,0,0,.12157)] rounded-full my-1.5">
+    <div className="flex max-w-max items-center gap-x-2 bg-[#e0e0e0] rounded-full my-1.5">
       <span className="bg-white rounded-full w-[45px] h-[45px] flex justify-center items-center">
         {logo ? <Image width={42} height={42} src={logo} alt="logo" /> : ""}
       </span>

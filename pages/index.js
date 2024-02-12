@@ -98,7 +98,7 @@ const Home = () => {
           }, 400);
         }}
       />
-      <div className="w-full flex flex-col items-center bg-[#E0CCBE]">
+      <div className="w-full flex flex-col items-center bg-[#EFECEC]">
         <Header
           logo={restaurantDetails?.meta?.icon}
           title={restaurantDetails?.title?.rendered}
@@ -107,7 +107,7 @@ const Home = () => {
           onCart={() => setShowCartPopup(true)}
         />
       </div>
-      <div className="flex flex-col w-full bg-[#E0CCBE]">
+      <div className="flex flex-col w-full bg-[#EFECEC]">
         <span className="w-full h-[.5px] bg-[#0002] mb-2.5"></span>
         <div className="bg-[#eeedeb95] font-medium text-[13px] px-8 rounded-full py-1 mb-2.5 w-max mx-auto">
           {" "}
@@ -121,7 +121,7 @@ const Home = () => {
             ))}
         </div>
       </div>
-      <div className="bg-[#2d2d2d] flex flex-col pt-2">
+      <div className="bg-[#EEEDEB] flex flex-col pt-2">
         {categories
           .filter((cat) => cat.menuItems.length > 0)
           .map((cat) => (
@@ -129,7 +129,7 @@ const Home = () => {
               <span className="flex justify-center px-2 items-center gap-x-1 mb-4">
                 <span className="w-[22%] h-[2px] bg-gray-400"></span>
                 <span
-                  className="text-[#E0CCBE] font-bold text-[20px]"
+                  className="text-[#2d2d2d] font-bold text-[20px]"
                   id={cat.name}
                 >{`« ${cat.name} »`}</span>
                 <span className="w-[22%] h-[2px] bg-gray-400"></span>
@@ -155,7 +155,7 @@ const Home = () => {
           <>
             <span className="flex justify-center px-2 items-center gap-x-1 mb-4">
               <span className="w-[22%] h-[2px] bg-gray-400"></span>
-              <span className="text-[#E0CCBE] font-bold text-[20px]">{`« همه موارد »`}</span>
+              <span className="text-[#EFECEC] font-bold text-[20px]">{`« همه موارد »`}</span>
               <span className="w-[22%] h-[2px] bg-gray-400"></span>
             </span>{" "}
             <div className="grid grid-cols-1 w-[90%] mx-auto gap-y-4 pb-4 h-full lg:grid-cols-2 lg:gap-x-4">
@@ -176,7 +176,7 @@ const Home = () => {
       </div>
     </div>
   ) : (
-    <div className="flex flex-col justify-center items-center h-screen w-full">
+    <div className="flex flex-col justify-center items-center h-screen w-full bg-[#2d2d2d]">
       {renderBeforeDataLoaded()}
     </div>
   );

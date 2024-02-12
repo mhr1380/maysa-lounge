@@ -28,7 +28,7 @@ export const SingleItemPopup = ({
   }, [show]);
   return (
     <div
-      className={`w-full h-screen lg:mx-auto bg-[#2d2d2d] lg:bg-opacity-70 flex flex-col fixed top-0 left-0 lg:items-center lg:justify-center ${
+      className={`w-full h-screen lg:mx-auto bg-[#efecec] lg:bg-opacity-70 flex flex-col fixed top-0 left-0 lg:items-center lg:justify-center ${
         show ? "opacity-100" : "opacity-0 pointer-events-none"
       } transition-opacity duration-300 ease-in-out z-30`}
     >
@@ -42,10 +42,10 @@ export const SingleItemPopup = ({
         <HiMiniXMark className="text-[#E0CCBE] text-4xl" />
       </div>
       {show && (
-        <div className="lg:w-[400px] lg:h-[650px] lg:bg-[#2d2d2d] lg:rounded-2xl lg:overflow-hidden">
+        <div className="lg:w-[400px] lg:h-[650px] lg:bg-[#efecec] lg:rounded-2xl lg:overflow-hidden">
           <div className="flex justify-center">
             {isLoading && (
-              <div className="w-[400px] h-[400px] bg-[#2d2d2d] flex justify-center items-center">
+              <div className="w-[400px] h-[400px] bg-[#efecec] flex justify-center items-center">
                 <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-[#E0CCBE]"></div>
               </div>
             )}
@@ -58,13 +58,13 @@ export const SingleItemPopup = ({
               onLoad={() => setIsLoading(false)}
             />
           </div>
-          <div className="bg-[#2d2d2d] rounded-2xl">
-            <div className="flex flex-col gap-y-6 w-[90%] mx-auto bg-gradient-to-b opacity-90 from-[#454545] to-[#2d2d2d] p-4 mt-8 rounded-lg">
+          <div className="bg-[#efecec] rounded-2xl">
+            <div className="flex flex-col gap-y-6 w-[90%] mx-auto bg-[#E5E1DA] p-4 mt-8 rounded-lg">
               <div className="w-full flex flex-col">
                 <div className="flex flex-col">
-                  <div className="text-white text-lg font-bold">{name}</div>
-                  <div className="text-white">{description}</div>
-                  <span className="text-white flex gap-x-1 items-center self-end">
+                  <div className="text-[#2d2d2d] text-lg font-bold">{name}</div>
+                  <div className="text-[#2d2d2d]">{description}</div>
+                  <span className="text-[#2d2d2d] flex gap-x-1 items-center self-end">
                     <span className="text-[20px] font-sans font-bold">
                       {price}
                     </span>
