@@ -28,7 +28,7 @@ export const SingleItemPopup = ({
   }, [show]);
   return (
     <div
-      className={`w-full h-screen lg:mx-auto bg-[#efecec] lg:bg-opacity-70 flex flex-col fixed top-0 left-0 lg:items-center lg:justify-center ${
+      className={`w-full h-screen lg:mx-auto bg-[#efecec] dark:bg-[#2d2d2d] lg:bg-opacity-70 flex flex-col fixed top-0 left-0 lg:items-center lg:justify-center ${
         show ? "opacity-100" : "opacity-0 pointer-events-none"
       } transition-opacity duration-300 ease-in-out z-30`}
     >
@@ -58,13 +58,17 @@ export const SingleItemPopup = ({
               onLoad={() => setIsLoading(false)}
             />
           </div>
-          <div className="bg-[#efecec] rounded-2xl">
-            <div className="flex flex-col gap-y-6 w-[90%] mx-auto bg-[#E5E1DA] p-4 mt-8 rounded-lg">
+          <div className="bg-[#efecec] dark:bg-[#2d2d2d] rounded-2xl">
+            <div className="flex flex-col gap-y-6 w-[90%] mx-auto bg-[#E5E1DA] dark:bg-gradient-to-b dark:opacity-90 dark:from-[#454545] dark:to-[#2d2d2d] p-4 mt-8 rounded-lg">
               <div className="w-full flex flex-col">
                 <div className="flex flex-col">
-                  <div className="text-[#2d2d2d] text-lg font-bold">{name}</div>
-                  <div className="text-[#2d2d2d]">{description}</div>
-                  <span className="text-[#2d2d2d] flex gap-x-1 items-center self-end">
+                  <div className="text-[#2d2d2d] dark:text-white text-lg font-bold">
+                    {name}
+                  </div>
+                  <div className="text-[#2d2d2d] dark:text-white">
+                    {description}
+                  </div>
+                  <span className="text-[#2d2d2d] dark:text-white flex gap-x-1 items-center self-end">
                     <span className="text-[20px] font-sans font-bold">
                       {price}
                     </span>

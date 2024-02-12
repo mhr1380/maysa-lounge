@@ -121,7 +121,7 @@ const Home = () => {
             ))}
         </div>
       </div>
-      <div className="bg-[#EEEDEB] flex flex-col pt-2">
+      <div className="bg-[#EEEDEB] dark:bg-[#2d2d2d] flex flex-col pt-2">
         {categories
           .filter((cat) => cat.menuItems.length > 0)
           .map((cat) => (
@@ -129,7 +129,7 @@ const Home = () => {
               <span className="flex justify-center px-2 items-center gap-x-1 mb-4">
                 <span className="w-[22%] h-[2px] bg-gray-400"></span>
                 <span
-                  className="text-[#2d2d2d] font-bold text-[20px]"
+                  className="text-[#2d2d2d] dark:text-[#EEEDEB] font-bold text-[20px]"
                   id={cat.name}
                 >{`« ${cat.name} »`}</span>
                 <span className="w-[22%] h-[2px] bg-gray-400"></span>

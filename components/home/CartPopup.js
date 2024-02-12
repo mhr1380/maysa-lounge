@@ -51,17 +51,18 @@ const CartPopup = ({ cartItems, setCartItems, onClose, show }) => {
               <div>
                 <div className="flex gap-x-1 items-center">
                   <button
-                    className="bg-[#a29378] rounded-full w-5 h-5"
-                    onClick={() => decreaseItem(index)}
-                  >
-                    -
-                  </button>
-                  <div>{item.count}</div>
-                  <button
-                    className="bg-[#a29378] rounded-full w-5 h-5"
+                    className="bg-[#a29378] rounded-full w-5 h-5 flex justify-center items-center"
                     onClick={() => increaseItem(index)}
                   >
                     +
+                  </button>
+                  <div>{item.count}</div>
+
+                  <button
+                    className="bg-[#a29378] rounded-full w-5 h-5 flex justify-center items-center"
+                    onClick={() => decreaseItem(index)}
+                  >
+                    -
                   </button>
                 </div>
               </div>
