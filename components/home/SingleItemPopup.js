@@ -39,14 +39,14 @@ export const SingleItemPopup = ({
           onCancel();
         }}
       >
-        <HiMiniXMark className="text-[#a29378] text-4xl" />
+        <HiMiniXMark className="text-[#E0CCBE] text-4xl" />
       </div>
       {show && (
         <div className="lg:w-[400px] lg:h-[650px] lg:bg-[#2d2d2d] lg:rounded-2xl lg:overflow-hidden">
           <div className="flex justify-center">
             {isLoading && (
               <div className="w-[400px] h-[400px] bg-[#2d2d2d] flex justify-center items-center">
-                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-[#a29378]"></div>
+                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-[#E0CCBE]"></div>
               </div>
             )}
             <Image
@@ -78,7 +78,7 @@ export const SingleItemPopup = ({
               </div>
               <div className="flex flex-col gap-y-2">
                 <button
-                  className="flex items-center bg-[#a29378] px-4 py-2 rounded-lg font-bold justify-center text-[15px] text-[#2d2d2d]"
+                  className="flex items-center bg-[#E0CCBE] px-4 py-2 rounded-lg font-bold justify-center text-[15px] text-[#2d2d2d]"
                   onClick={() => {
                     onAddToCart();
                   }}
@@ -87,7 +87,7 @@ export const SingleItemPopup = ({
                   <MdOutlinePostAdd size={23} color="#2d2d2d" />
                 </button>
                 {/* <button
-                  className="flex bg-[#a29378] px-4 py-2 rounded-lg font-bold justify-center text-[15px]"
+                  className="flex bg-[#E0CCBE] px-4 py-2 rounded-lg font-bold justify-center text-[15px]"
                   onClick={() => {
                     setIsLoading(true);
                     onCancel();

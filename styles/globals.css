@@ -21,32 +21,15 @@
   font-weight: 400;
   font-style: normal;
 }
-@font-face {
-  font-family: "iransans";
-  src: url("../assets/fonts/IRANSansWeb(FaNum).woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "iransans";
-  src: url("../assets/fonts/IRANSansWeb\(FaNum\)_Medium.woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "iransans";
-  src: url("../assets/fonts/IRANSansWeb\(FaNum\)_Bold.woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "iransans";
-  src: url("../assets/fonts/IRANSansWeb\(FaNum\)_Light.woff2");
-  font-weight: 200;
-  font-style: normal;
-}
 body {
   direction: rtl;
-  font-family: "iransans";
-  background: #2d2d2d;
+  font-family: "YekanBakh";
+  background: #3c3633;
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  src: url("../assets/fonts/yekanbakh/yekanbakhreg.woff2");
+  font-weight: 400;
+  font-style: normal;
 }

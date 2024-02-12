@@ -2,7 +2,7 @@ import Image from "next/image";
 export const CategoryItem = ({ image, name }) => {
   return (
     <div
-      className="inline-block items-center bg-[#D1C9BC] rounded-xl mb-2 ml-4 w-[120px] h-[120px] overflow-hidden cursor-pointer"
+      className="inline-block items-center bg-[#EEEDEB] rounded-xl mb-2 ml-4 w-[120px] h-[120px] overflow-hidden cursor-pointer"
       onClick={() => {
         document.getElementById(name).scrollIntoView({ behavior: "smooth" });
       }}

@@ -5,7 +5,7 @@ import { MenuItem } from "@/components/home/MenuItem";
 import { CategoryItem } from "@/components/home/CategoryItem";
 import { SingleItemPopup } from "@/components/home/SingleItemPopup";
 import CartPopup from "@/components/home/CartPopup";
-import maysa from "@/assets/images/maysa-lounge-white.png";
+import cecilia from "@/assets/images/logo.png";
 
 import Image from "next/image";
 let priority = []; //add priority categories here by order {name:"cat name"}
@@ -98,7 +98,7 @@ const Home = () => {
           }, 400);
         }}
       />
-      <div className="w-full flex flex-col items-center bg-[#a29378]">
+      <div className="w-full flex flex-col items-center bg-[#E0CCBE]">
         <Header
           logo={restaurantDetails?.meta?.icon}
           title={restaurantDetails?.title?.rendered}
@@ -107,11 +107,11 @@ const Home = () => {
           onCart={() => setShowCartPopup(true)}
         />
       </div>
-      <div className="flex flex-col w-full bg-[#a29378]">
+      <div className="flex flex-col w-full bg-[#E0CCBE]">
         <span className="w-full h-[.5px] bg-[#0002] mb-2.5"></span>
-        <div className="bg-[hsla(0,0%,100%,.12157)] font-medium text-[13px] px-8 rounded-full py-1 mb-2.5 w-max mx-auto">
+        <div className="bg-[#eeedeb95] font-medium text-[13px] px-8 rounded-full py-1 mb-2.5 w-max mx-auto">
           {" "}
-          همه دسته بندی ها در یک نگاه
+          دسته بندی ها{" "}
         </div>
         <div className="w-[90%] mx-auto overflow-x-auto whitespace-nowrap">
           {categories
@@ -129,7 +129,7 @@ const Home = () => {
               <span className="flex justify-center px-2 items-center gap-x-1 mb-4">
                 <span className="w-[22%] h-[2px] bg-gray-400"></span>
                 <span
-                  className="text-[#a29378] font-bold text-[20px]"
+                  className="text-[#E0CCBE] font-bold text-[20px]"
                   id={cat.name}
                 >{`« ${cat.name} »`}</span>
                 <span className="w-[22%] h-[2px] bg-gray-400"></span>
@@ -155,7 +155,7 @@ const Home = () => {
           <>
             <span className="flex justify-center px-2 items-center gap-x-1 mb-4">
               <span className="w-[22%] h-[2px] bg-gray-400"></span>
-              <span className="text-[#a29378] font-bold text-[20px]">{`« همه موارد »`}</span>
+              <span className="text-[#E0CCBE] font-bold text-[20px]">{`« همه موارد »`}</span>
               <span className="w-[22%] h-[2px] bg-gray-400"></span>
             </span>{" "}
             <div className="grid grid-cols-1 w-[90%] mx-auto gap-y-4 pb-4 h-full lg:grid-cols-2 lg:gap-x-4">
@@ -190,17 +190,21 @@ const renderBeforeDataLoaded = () => {
       return "بعد از ظهر";
     } else if (currentHour >= 17 && currentHour < 20) {
       return "عصر";
-    } else {
+    } else if (currentHour >= 20 && currentHour < 24) {
       return "شب";
+    } else if (currentHour >= 0 && currentHour < 5) {
+      return "نیمه شب";
+    } else {
+      return "";
     }
   };
 
-  const greeting = `${getCurrentTime()} زیباتون بخیر. به مایسا خوش اومدید :)`;
+  const greeting = `${getCurrentTime()} زیباتون بخیر. به سیسیلیا خوش اومدید :)`;
 
   return (
     <div className="flex flex-col justify-center items-center h-screen w-full text-white -mt-16">
-      <Image src={maysa} alt="maysa" className="w-28" />
-      <p>{greeting}</p>
+      <Image src={cecilia} alt="maysa" className="w-28" />
+      <p className="mt-3">{greeting}</p>
       <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-white mt-3"></div>
     </div>
   );

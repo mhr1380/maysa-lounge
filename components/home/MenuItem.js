@@ -12,7 +12,7 @@ export const MenuItem = ({ name, description, image, price, onClick }) => {
       <div className="w-[120px] h-[136px] overflow-hidden">
         {isLoading && image ? (
           <div className="w-[120px] h-[136px] bg-[#2d2d2d] flex justify-center items-center">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#a29378]"></div>
+            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#E0CCBE]"></div>
           </div>
         ) : (
           ""
