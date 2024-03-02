@@ -1,1 +1,10 @@
-    
+{
+  "restaurants": [
+    {
+      "name": "khadem",
+      "top_header": "#efecec",
+      "top_header_overlay": "#efecec",
+      "body": "#efecec"
+    }
+  ]
+}

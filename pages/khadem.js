@@ -6,7 +6,7 @@ import { CategoryItem } from "@/components/home/CategoryItem";
 import { SingleItemPopup } from "@/components/home/SingleItemPopup";
 import CartPopup from "@/components/home/CartPopup";
 import logo from "@/assets/images/khadem.png";
-
+import data from "../data/restaurants.json";
 import Image from "next/image";
 import Head from "next/head";
 let priority = []; //add priority categories here by order {name:"cat name"}
@@ -61,7 +61,6 @@ const Home = () => {
 
     fetchRestaurantDetails();
   }, []);
-
   return (
     <>
       <Head>
@@ -106,7 +105,9 @@ const Home = () => {
               }, 400);
             }}
           />
-          <div className="w-full flex flex-col items-center bg-[#EFECEC]">
+          <div
+            className={`w-full flex flex-col items-center bg-[${data.restaurants[0].top_header}]`}
+          >
             <Header
               logo={restaurantDetails?.meta?.icon}
               title={restaurantDetails?.title?.rendered}
